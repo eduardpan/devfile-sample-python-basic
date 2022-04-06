@@ -11,7 +11,14 @@
 ####
 FROM registry.access.redhat.com/ubi8/python-38:latest
 
+# Add application sources with correct permissions for OpenShift
+USER 0
+#ADD app-src .
 WORKDIR /projects
+
+RUN chown -R 1001:0 ./
+USER 1001
+
 
 RUN python3 -m venv venv
 RUN . venv/bin/activate
