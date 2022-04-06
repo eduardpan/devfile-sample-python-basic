@@ -9,7 +9,6 @@ def hello():
 
 @app.route('/toys')
 def toys():
-    print(request.method)
     return "My toys"
 
 if __name__ == '__main__':
