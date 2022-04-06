@@ -7,5 +7,9 @@ app = Flask(__name__)
 def hello():
     return "Hello World from Python Training!"
 
+@app.route('/toys')
+def hello():
+    return "My toys"
+
 if __name__ == '__main__':
     serve(app, host='0.0.0.0', port=8080)
